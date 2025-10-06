@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body class="bg-gray-100">
+    <div id="top" class="flex bg-gray-400 flex-wrap p-2 justify-center gap-2 w-[100vw] md:p-4 fixed top-0">
+        <button id="Filter" class="gap bg-green-400 pt-2 pb-2 pl-3 pr-3 rounded-xs font-bold text-white hover:bg-white hover:text-black md:text-xl">Filter</button>
+        <button id="Offers" class="gap bg-green-400 pt-2 pb-2 pl-3 pr-3 rounded-xs font-bold text-white hover:bg-white hover:text-black">Offers</button>
+        <button id="Rating" class="gap bg-green-400 pt-2 pb-2 pl-3 pr-3 rounded-xs font-bold text-white hover:bg-white hover:text-black">Rating 4.5+</button>
+        <button id="Alcohol" class="gap bg-green-400 pt-2 pb-2 pl-3 pr-3 rounded-xs font-bold text-white hover:bg-white hover:text-black">Serves Alcohol</button>
+        <button id="Open" class="gap bg-green-400 pt-2 pb-2 pl-3 pr-3 rounded-xs font-bold text-white hover:bg-white hover:text-black">Open NOw</button>
+    </div>
+    
+
+     <!-- filter option popup  -->
+      <div id="filergroup" class="hidden fixed inset-0 z-50 bg-black/50  flex justify-center items-center transition-opacity duration-400 ease-in-out ">
+      <div class="mt-20 bg-white inline-block p-10 m-2 rounded-xs">
+        <h1 class="font-bold mb-2 text-3xl">Choose Filter</h1>
+        <div id="filterOption">
+            <input type="radio" id="sortByrating" name="filteroption" value="rating">
+            <label for="sortByrating">Rating: Sort by rating</label>
+        </div>
+        <div id="filterOption">
+            <input type="radio" id="sortHighTolow" name="filteroption" value="highLow">
+            <label for="sortHighTolow">Rating: High to Low</label>
+        </div>
+        <div id="filterOption">
+            <input type="radio" id="costOption" name="filteroption" value="costhighLow">
+            <label for="costOption">Cost: Low to high</label>
+        </div>
+        <div id="filterOption">
+            <input type="radio" id="distanceOption" name="filteroption" value="distance">
+            <label for="distanceOption">Distance</label>
+        </div>
+        <div class="flex justify-between m-2 font-bold">
+            <button id="apply-filter" class="bg-green-400 p-2 text-white rounded-xs hover:bg-gray-700">Appl</button>
+        <button id="btn-close" class="bg-green-400 p-2 text-white rounded-xs hover:bg-gray-700">Close</button>
+        </div>
+      </div>
+      </div>
+    <div id="root" class="mt-24 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 p-6"></div>
+    
+    <script src="./dummycreatedata.js"></script>
+</body>
+</html>
