@@ -447,7 +447,7 @@ Alcohol.addEventListener('click',()=>{
 })
 const rating = document.querySelector('#Rating')
 rating.addEventListener('click',()=>{
-   const result =  restaurants.filter((obj)=>  obj.rating>4.5)
+   const result =  restaurants.filter((obj)=>  obj.rating>4.2)
     document.querySelector('#root').replaceChildren()
 
    getrResturant(result)
@@ -478,6 +478,23 @@ const filtergroup = document.querySelector('#filergroup')
     filtergroup.classList.toggle('hidden')
 })
 const applybtn = document.querySelector('#apply-filter')
-
-
+applybtn.addEventListener('click',()=>{
+const element = document.querySelector('input[name="filteroption"]:checked')
+const answer =  element.value;
+if(answer === 'rating'){
+   restaurants.sort((a,b)=>b.rating-a.rating)
+}else if(answer === 'highLow'){
+   restaurants.sort((a,b)=>b.price_for_two-a.price_for_two)
+} else if(answer === 'costLowhigh'){
+   restaurants.sort((a,b)=>a.price_for_two-b.price_for_two)
+}else if(answer === 'distance'){
+   restaurants.sort((a,b)=>a.distance_from_customer_house-b.distance_from_customer_house)
+}else{
+   console.log("Nothing");
+}
+const filtergroup = document.querySelector('#filergroup')
+ filtergroup.classList.toggle('hidden')
+document.getElementById('root').replaceChildren();
+getrResturant(restaurants)
+})
 getrResturant(restaurants)
